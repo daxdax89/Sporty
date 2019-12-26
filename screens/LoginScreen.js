@@ -22,6 +22,9 @@ export default function HomeScreen() {
       source={require("../assets/images/soccer-field.jpg")}
       style={styles.background}
     >
+      <View style={styles.titleHolder}>
+        <Text style={styles.title}>Sporty</Text>
+      </View>
       <View style={styles.iconHolder}>
         <Icon
           name="sign-in"
@@ -34,7 +37,12 @@ export default function HomeScreen() {
         <TextInput
           inlineImageLeft="search_icon"
           style={styles.input}
-          value="test"
+          value="Username"
+        />
+        <TextInput
+          inlineImageLeft="search_icon"
+          style={styles.input}
+          value="Password"
         />
         <TextInput
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
@@ -150,12 +158,21 @@ const styles = StyleSheet.create({
   inputHolder: {
     marginTop: 20
   },
+  title: {
+    color: "white",
+    textAlign: "center"
+  },
+  inputHolder: {
+    marginTop: 20
+  },
   input: {
     color: "white",
     textAlign: "center",
     borderWidth: 1,
     borderColor: "white",
-    height: 40
+    height: 40,
+    marginTop: 10,
+    backgroundColor: "#4d4d4d"
   },
   iconHolder: {
     marginTop: 150
