@@ -15,6 +15,8 @@ import { Icon } from "react-native-elements";
 // import { MonoText } from "../components/StyledText";
 
 export default function HomeScreen() {
+  const [value, onChangeText] = React.useState("Useless Placeholder");
+
   return (
     <ImageBackground
       source={require("../assets/images/soccer-field.jpg")}
@@ -25,11 +27,21 @@ export default function HomeScreen() {
           name="sign-in"
           type="font-awesome"
           color="white"
-          size={100}
+          size={150}
         ></Icon>
       </View>
-
-      <TextInput inlineImageLeft="search_icon" style={styles.input} />
+      <View style={styles.inputHolder}>
+        <TextInput
+          inlineImageLeft="search_icon"
+          style={styles.input}
+          value="test"
+        />
+        <TextInput
+          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+          onChangeText={text => onChangeText(text)}
+          value={value}
+        />
+      </View>
     </ImageBackground>
     // <View style={styles.container}>
     //   <ScrollView
@@ -135,11 +147,18 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
+  inputHolder: {
+    marginTop: 20
+  },
   input: {
-    color: "black"
+    color: "white",
+    textAlign: "center",
+    borderWidth: 1,
+    borderColor: "white",
+    height: 40
   },
   iconHolder: {
-    marginTop: 200
+    marginTop: 150
   }
   //   container: {
   //     flex: 1,
