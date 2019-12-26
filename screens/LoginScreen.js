@@ -1,5 +1,6 @@
 import * as WebBrowser from "expo-web-browser";
 import React from "react";
+import * as Font from "expo-font";
 import {
   Platform,
   ScrollView,
@@ -17,7 +18,18 @@ import { Icon } from "react-native-elements";
 // import { MonoText } from "../components/StyledText";
 
 export default function HomeScreen() {
-  const [value, onChangeText] = React.useState("Useless Placeholder");
+  // const [value, onChangeText] = React.useState("Useless Placeholder");
+  // state = {
+  //   fontLoaded:false
+  // };
+
+  // async componentDidMount(){
+  //   await Font.loadAsync({
+  //     "Permanent Marker": require("../assets/fonts/PermanentMarker-Regular.ttf")
+  //   });
+  //   this.setState({ fontLoaded: true });
+
+  // }
 
   return (
     <ImageBackground
@@ -27,14 +39,19 @@ export default function HomeScreen() {
       <View style={styles.titleHolder}>
         <Text style={styles.title}>Sporty</Text>
       </View>
-      <View style={styles.iconHolder}>
+      {/* this.state.fontLoaded?(
+      <View style={styles.titleHolder}>
+        <Text style={styles.title}>Sporty</Text>
+      </View>
+      ): null */}
+      {/* <View style={styles.iconHolder}>
         <Icon
           name="sign-in"
           type="font-awesome"
           color="#fafafa"
           size={150}
         ></Icon>
-      </View>
+      </View> */}
       <View>
         <Text style={styles.welcome}>Welcome!</Text>
         <Text style={styles.info}>Sign in with your credentials</Text>
@@ -121,7 +138,8 @@ export default function HomeScreen() {
 }
 
 HomeScreen.navigationOptions = {
-  header: null
+  header: null,
+  tabBarVisible: false
 };
 
 // function DevelopmentModeNotice() {
@@ -182,7 +200,11 @@ const styles = StyleSheet.create({
   title: {
     color: "#fafafa",
     textAlign: "center",
-    fontSize: 50
+    fontSize: 90,
+    fontFamily: "permanent-marker",
+    width: 300,
+    marginTop: 50,
+    marginBottom: 30
   },
   inputHolder: {
     marginTop: 20
@@ -203,7 +225,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    backgroundColor: "#03a9f4",
+    backgroundColor: "#1c1c1c",
     color: "white",
     paddingTop: 10,
     paddingBottom: 10,
