@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
-  TextInput
+  TextInput,
+  Button
 } from "react-native";
 import { Icon } from "react-native-elements";
 
@@ -49,6 +50,13 @@ export default function HomeScreen() {
           onChangeText={text => onChangeText(text)}
           value={value}
         />
+      </View>
+      <View style={styles.buttonHolder}>
+        <Button
+          style={styles.button}
+          title="Login"
+          // onPress={alert("LOL!")}
+        ></Button>
       </View>
     </ImageBackground>
     // <View style={styles.container}>
@@ -176,6 +184,12 @@ const styles = StyleSheet.create({
   },
   iconHolder: {
     marginTop: 150
+  },
+  buttonHolder: {
+    marginTop: 20
+  },
+  button: {
+    color: "white"
   }
   //   container: {
   //     flex: 1,
