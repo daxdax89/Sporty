@@ -9,7 +9,8 @@ import {
   View,
   ImageBackground,
   TextInput,
-  Button
+  Button,
+  TouchableWithoutFeedback
 } from "react-native";
 import { Icon } from "react-native-elements";
 
@@ -30,9 +31,13 @@ export default function HomeScreen() {
         <Icon
           name="sign-in"
           type="font-awesome"
-          color="white"
+          color="#fafafa"
           size={150}
         ></Icon>
+      </View>
+      <View>
+        <Text style={styles.welcome}>Welcome!</Text>
+        <Text style={styles.info}>Sign in with your credentials</Text>
       </View>
       <View style={styles.inputHolder}>
         <TextInput
@@ -45,18 +50,16 @@ export default function HomeScreen() {
           style={styles.input}
           value="Password"
         />
-        <TextInput
+        {/* <TextInput
           style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
           onChangeText={text => onChangeText(text)}
           value={value}
-        />
+        /> */}
       </View>
       <View style={styles.buttonHolder}>
-        <Button
-          style={styles.button}
-          title="Login"
-          // onPress={alert("LOL!")}
-        ></Button>
+        <TouchableWithoutFeedback style={styles.button}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableWithoutFeedback>
       </View>
     </ImageBackground>
     // <View style={styles.container}>
@@ -163,33 +166,54 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center"
   },
-  inputHolder: {
-    marginTop: 20
+  welcome: {
+    color: "white",
+    textAlign: "left",
+    fontSize: 30,
+    width: 300
+  },
+  info: {
+    color: "#f7f7f7",
+    fontSize: 16
+  },
+  titleHolder: {
+    paddingTop: 100
   },
   title: {
-    color: "white",
-    textAlign: "center"
+    color: "#fafafa",
+    textAlign: "center",
+    fontSize: 50
   },
   inputHolder: {
     marginTop: 20
   },
   input: {
-    color: "white",
+    color: "#1c1c1c",
     textAlign: "center",
     borderWidth: 1,
     borderColor: "white",
-    height: 40,
+    height: 50,
     marginTop: 10,
-    backgroundColor: "#4d4d4d"
-  },
-  iconHolder: {
-    marginTop: 150
+    backgroundColor: "#f7f7f7",
+    width: 300,
+    borderRadius: 5
   },
   buttonHolder: {
     marginTop: 20
   },
-  button: {
-    color: "white"
+  buttonText: {
+    fontSize: 20,
+    backgroundColor: "#03a9f4",
+    color: "white",
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 5,
+    fontWeight: "bold",
+    width: 300,
+    textAlign: "center",
+    height: 50
   }
   //   container: {
   //     flex: 1,
